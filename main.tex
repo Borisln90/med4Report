@@ -22,7 +22,7 @@
 \usepackage{graphicx}
 \usepackage{csquotes}
 \usepackage{appendix}
-\usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
+\usepackage[backend=biber, style=ieee]{biblatex}
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{subfigure}
@@ -58,7 +58,9 @@
 		captionpos=b
 }
 
-\DeclareLanguageMapping{english}{english-apa}
+% Used by biblatex in apa mode
+%\DeclareLanguageMapping{english}{english-apa}
+
 \graphicspath{{images/}}
 \addbibresource{bib.bib}
 
