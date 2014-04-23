@@ -25,4 +25,6 @@
 *.bcf
 *.pdf
 *.fdb_latexmk
+*.fls
 *.sublime-workspace
+
