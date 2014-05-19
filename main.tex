@@ -15,7 +15,7 @@
 \usepackage[danish,english]{babel}
 \usepackage{setspace}
 \usepackage[pdfborder={0 0 0}]{hyperref}
-
+\usepackage{lipsum}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -30,7 +30,7 @@
 \usepackage[labelfont=bf]{caption}
 \usepackage{listings}
 \usepackage[usenames,dvipsnames,table]{xcolor}
-
+\usepackage[section]{placeins}
 \usepackage{parskip}
 
 \colorlet{NotLavender}{Lavender!30}
@@ -63,6 +63,9 @@
 % \DeclareLanguageMapping{english}{english-apa}
 \graphicspath{{images/}}
 \addbibresource{bib.bib}
+
+\newcommand{\specialcell}[2][c]{%
+	\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
 
 
 \author{Group Number}
@@ -101,7 +104,7 @@
 \include{./chapters/pre_analysis}
 \include{./chapters/analysis}
 \include{./chapters/lor}
-\include{./chapters/methods}
+%\include{./chapters/methods}
 \include{./chapters/design}
 \include{./chapters/implementation}
 \include{./chapters/evaluation}
