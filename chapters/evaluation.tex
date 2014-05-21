@@ -138,7 +138,7 @@ There is some significant difference between the understanding of the non-speech
 
 % subsubsection alternative_hypothesis (end)
 
-\subsubsection{Test Delimitation} % (fold)
+\subsection{Test Delimitation} % (fold)
 \label{ssub:test_delimitation}
 
 In order to prove or disprove the Null hypothesis, a statistical test is specified.
@@ -254,6 +254,8 @@ The rows indicates responses from a single test participant.
     \item High values has the label: 3
 \end{itemize}
 
+The "inverse" represents that the data from the specific data set has been inversed. As visibility had the correct answer of 3, but as the labelling indicates, the low value label is 1, therefore to make the responses match the other results, the data is inverted.
+
 It can be deducted from the figure, that if a low weather condition which has been answered and labeled with 1, then the answer is correct, as the image illustrates a weather condition of low value. 
 Likewise with medium values which has the answer of 2 and high values with the answer of 3. 
 If a medium sound is heard, and the test subject answers correctly with a response of medium, then 2 is noted.
@@ -261,8 +263,8 @@ If a medium sound is heard, and the test subject answers correctly with a respon
 \subsubsection{Kruskal-Wallis Test Results} % (fold)
 \label{ssub:kruskal_wallis_test_results}
 
-The test results will be divided into three separate Kruskal-Wallis tests, in order to evaluate upon low data, medium data and high data separately, to make the distinction between the independent variable more easily. 
-What will be the outcome is a Boxplot, respectively of low, medium and high weather data elements along with the data descriptions of the three Kruskal-Wallis tests. 
+The test results is divided into three separate Kruskal-Wallis tests, in order to evaluate upon low data, medium data and high data separately, to make the distinction between the independent variable more precise. 
+What will be the outcome is a Boxplot, respectively of low, medium and high weather data elements along with the data descriptions, ANOVA-tables, of the three Kruskal-Wallis tests. 
 
 
 \subsubsection*{Low values: Kruskal-Wallis ANOVA table} % (fold)
@@ -275,7 +277,10 @@ What will be the outcome is a Boxplot, respectively of low, medium and high weat
     \label{fig:evaluation2}
 \end{figure}
 
-The P value(Prob>Chi-sq) is 0.0042 which is under 0.05. Therefore the null hypothesis is rejected and accept the alternative hypothesis.
+The P value(Prob>Chi-sq) is 0.0042 which is under 0.05. Therefore the null hypothesis is rejected and accept the alternative hypothesis. (See figure \ref{fig:evaluation2})
+
+This means that we accept that there is some significant difference between the understanding of the non-speech auditory display of weather data using sonification techniques, compared to the understanding of visually presented weather information, specifically for low value data, which has been specified as the alternative hypothesis.
+\FloatBarrier
 
 % subsubsection low_values_kruskal_wallis_anova_table (end)
 
@@ -289,7 +294,7 @@ The P value(Prob>Chi-sq) is 0.0042 which is under 0.05. Therefore the null hypot
     \label{fig:evaluation3}
 \end{figure}
 
-Generally the boxplot indicates similar levels of medians but the visual scale has a different distribution than "Sound and Visual" and "Sounds".
+Figure \ref{fig:evaluation3} illustrates the Boxplot which generally indicates similar levels of medians but the visual scale has a different distribution than "Sound and Visual" and "Sounds".
 
 The "Visual" element is comparatively short, as the inner quartile range is overlapping which suggests that a high number of responses are 1. 
 A majority of participants answered correctly, but a low number of participants, indicated by the "plus", that 2 and 3 was also answered by a lower population of the test participants.
@@ -297,6 +302,76 @@ A majority of participants answered correctly, but a low number of participants,
 % subsubsection low_values_kruskal_wallis_test_results (end)
 
 % subsubsection kruskal_wallis_test_results (end)
+
+
+      %This is the Medium Values
+\subsubsection*{Medium values: Kruskal-Wallis ANOVA table} % (fold)
+\label{ssub:medium_values_kruskal_wallis_anova_table}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/Evaluation5.jpg}
+    \caption{ANOVA table medium data}
+    \label{fig:evaluation2}
+\end{figure}
+
+As seen on figure \ref{fig:evaluation2} the P value (Prob>Chi-sq) is 0.0088 and is therefore below the confidence interval of 0.05 and does therefore disprove the Null hypothesis and accept the alternative hypothesis.
+
+
+
+\FloatBarrier
+
+% subsubsection low_values_kruskal_wallis_anova_table (end)
+
+\subsubsection*{medium values: Kruskal-Wallis Boxplot test results} % (fold)
+\label{ssub:medium_values_kruskal_wallis_test_results}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=.5\textwidth]{images/Evaluation7.jpg}
+    \caption{Boxplot medium data}
+    \label{fig:evaluation5}
+\end{figure}
+
+The Boxplot of the medium values, see figure \ref{fig:evaluation5}, illustrates the distribution of the test results amongst the acquired data. The median of the three data samples are generally similar, but the distribution of responses are somewhat different. The median amongst the samples are 2, which is also the label which represents middle value data.
+
+The "Visual" boxplot indicates a minimum value which collides with the lower quartile and describes that atleast 50 percent of the test participants has answered 1 in the visual test of medium values. Another 25 percent has answered 2, and the maximum value indicates that 25 percent has answered 3, which is labelled as the high value. 
+
+The "Sound and Visual" illustrates, as the upper and lower quartiles, along with the maximum and minimum is overlapping, illustrates that a majority of the test participants has answered 2, being the correct answer. Only a few test participants has answered 3 which is the label of high values.
+
+Lastly, the "Sound" being the sonification of the medium valued weather data indicates that the median is 2, with a upper quartile of 25 percent having answered 3, along with 50 percent having answered 1.
+
+% subsubsection low_values_kruskal_wallis_test_results (end)
+
+% subsubsection kruskal_wallis_test_results (end)
+
+      % This is the high values
+      
+      
+    \subsubsection*{High values: Kruskal-Wallis ANOVA table} % (fold)
+\label{ssub:high_values_kruskal_wallis_anova_table}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=.7\textwidth]{images/Evaluation6.jpg}
+    \caption{ANOVA table medium data}
+    \label{fig:evaluation2}
+\end{figure}
+
+
+\FloatBarrier
+
+% subsubsection low_values_kruskal_wallis_anova_table (end)
+
+\subsubsection*{high values: Kruskal-Wallis Boxplot test results} % (fold)
+\label{ssub:high_values_kruskal_wallis_test_results}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=.5\textwidth]{images/Evaluation8.jpg}
+    \caption{Boxplot high value data}
+    \label{fig:evaluation5}
+\end{figure}
 
 
 \subsubsection{Graphical test results} % (fold)
@@ -420,6 +495,14 @@ And with the sound sample, below 25\% of the test participants thought that the 
 
 Although the boxplot and ANOVA tables indicates any similarities or differences between the samples, they do not describe what specific sounds/visuals which had any impact or what could have been done differently or what specific sounds which were actually successful in conveyance of sonifications of weather data.
 However, the following appendix(XX: Pie chart appendix)) indicates the percentage of correct responses of each weather category, and makes it possible for comparisons. 
+
+
+Whereof it is possible with our test results to elaborate upon which sonifications were successfully implemented, and to which degree, it is not possible to make assumptions based upon acquired evidence what actually was a success, and what was incorrect in the implementation of the sonifications.
+
+More specifically, it implies that we are able to observe the number of correct or incorrect responses from the test subjects, but we are unable to answer as to why we obtain these specific data sets based upon the acquired scientific test results.
+
+As we are only able to make assumptions based upon the acquired data, this will be discussed in the following chapter (See discussion XX).
+
 
 % subsection pie_charts (end)
 
