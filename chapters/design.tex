@@ -3,15 +3,15 @@
 \section{Design} % (fold)
 \label{sec:design}
 
-In this chapter we will look at the design of the prototype, which will be used in our test to try and answer the FPS. 
+In this chapter we will look at the design of the prototype, which will be used in our test with the purpose of answering the FPS. 
 The design will be based on the list of requirements (see Analysis chapter). 
 We are also going to take a look at the delimitation of our weather categories (e.g. temperature, wind speed, precipitation...). 
 Based on the requirements and delimitation, pre-tests will be designed and carried out. 
 These tests will then lead into a design blueprint of our prototype.
 
-From the list of requirements it should be possible to plan how the prototype is going to fulfill these. 
+From the list of requirements it should be possible to plan how the prototype is going to fulfil these. 
 Additionally, the weather categories have to be delimited into a realistic amount of weather conditions which suits our timetable. 
-After the delimitation the visual and auditory elements will be chosen from the results of pre-testing. 
+After the delimitation, the visual and auditory elements will be chosen from the results of pre-testing. 
 When the sounds and pictures are in place, it is time to create the blueprint of what the pictures should look like and how the sounds are going to be made. 
 Figure~\ref{fig:design1} describes the process of the actual design of the prototype.
 
@@ -38,11 +38,12 @@ General requirements:
     \item The visuals provided in testing must be based on results from either pre-testing and/or SOTA pre-analysis
     \item The sounds must have a meaning attached to them (i.e. semiosis)
     \item Symbolic representation is used to convey our message about the weather
+    \item Will use the type “data exploration” of sonification to translate weather data into sound
 \end{itemize}
 
 We have decided to have a pre-test to decide on the images to be used in the prototype. 
 This test involves test subjects to draw a given weather category (e.g. a drawing of certain amount of wind speed etc.). 
-To decide on the sounds for the prototype it was decided to make a three-step test. 
+To determine the sounds for the prototype it was decided to make a three-step test. 
 
 First step was making an interview that got us an idea of what sounds to use. 
 The second step was to make a another interview where people had to recognize the sounds that we had chosen, based upon the first pre-test. 
@@ -66,7 +67,7 @@ Program functionalities must be able to:
     \item Add filters to the sounds
 \end{itemize}
 
-We have decided to use Pure data\footnote{\url{http://puredata.info/}} since we already have some knowledge in this program and know it can fulfill our requirements. 
+We have decided to use Pure data\footnote{\url{http://puredata.info/}} since we already have some knowledge in this program and know it can fulfil our requirements. 
 
 % subsubsection prototype (end)
 
@@ -109,9 +110,9 @@ Based on the research from the weather applications (See Pre-Analysis section~\r
      \item \textbf{Downpour} - Rain in mm.
  \end{itemize}
 
-After going through the data on the raw list we found that many of the weather categories didn’t fit the project. 
-So we decided to only use relevant weather data that people normally would use in an everyday situation. 
-This delimitation is based on our research on what weather data there is available in the weather apps (See Pre-Analysis section~\ref{sub:weather_data}).
+After going through the data on the raw list we found that many of the weather categories did not fit the project. 
+Therefore, we decided to only use relevant weather data that people normally would use in an everyday situation. 
+This delimitation is based on our research on which types of weather data there is available in the weather applications (See Pre-Analysis section~\ref{sub:weather_data}).
 
 % subsubsection raw_list_of_weather_data (end)
 
@@ -138,9 +139,9 @@ This delimitation is based on our research on what weather data there is availab
      \item \textbf{Downpour} - Rain in mm.
  \end{itemize}
 
-Going through the relevant weather data we again decided that the list was too long and could create problems further into the project do to limited resources and the fact that we would still be able to answer our FPS with the delimited data. 
+Going through the relevant weather data, we decided once again that the list was too long and could create problems further into the project due to limited resources and the fact that we would still be able to answer our FPS with the delimited data in mind. 
 Therefore, we decided to make another delimitation. 
-The list was further delimited based on our thoughts of what an average person would need to know in an everyday scenario, so the list of data does not necessarily represent the weather categories required to create a functional weather app. 
+The list was further delimited based on our thoughts of what an average person would need to know in an everyday scenario, so the list of data does not necessarily represent the weather categories required to create a functional weather a	pplication. 
 
 % subsubsection list_of_relevant_data (end)
 
@@ -168,15 +169,15 @@ The list was further delimited based on our thoughts of what an average person w
 \subsubsection{Categories} % (fold)
 \label{ssub:categories}
 
-Now that the list had been delimited, it had to be converted into a design that made sure it was easy for the test subjects to answer the questions. 
+When the list had been delimited, it had to be converted into a design that made sure it was easy for the test subjects to answer the questions. 
 We did not use Continuous Sonification (See analysis section~\ref{par:continuous_sonification}), because it is hard for people to interpret numbers, for example: \enquote{Could you make a sound based on a temperature of 12 degrees?}. 
 Since it is not possible for us to go through every degree of e.g. temperature, the numbers were converted into three categories: Low, Medium and High. 
-We also decided that the following weather data: Pollen and Visibility, should act like a warning indicator. 
+We also decided that the weather data "Pollen" and "Visibility", should act like a warning indicator. 
 This means that the sound should only be played above or below a specific value.
-This decision was made since there is no reason to warn people about dangers when there is none. 
-In this case Pollen will be played when there is a high amount of pollen, and Visibility will be played when there is low visibility.
+This decision was made since there is no reason to warn users about dangers when there is none. 
+In this case "Pollen" will be played when there is a high amount of pollen, and "Visibility" will be played when there is low visibility.
 
-Now that the values have been decided , the values have to be assigned. We are getting our Low, Mid and High value from DMI\footnote{\url{http://www.dmi.dk/vejr/til-lands/byvejr/by/vis/DK/1000/K\%C3\%B8benhavn,\%20Danmark}}.
+When the values had been decided , the values had to be assigned. We are getting our Low, Mid and High value from DMI\footnote{\url{http://www.dmi.dk/vejr/til-lands/byvejr/by/vis/DK/1000/K\%C3\%B8benhavn,\%20Danmark}}.
 
 \begin{table}[!h]
 \centering
@@ -505,7 +506,7 @@ We will try to modify the to make sure that test participants make a clearer ass
 \label{subp:fog_}
 All the people that answered the question got the answer correct. 
 However, we also had some people who were unable to answer the question. 
-We conclude that they might know what the sound is but don’t connect it into that foggy scenario that we imagined people would in the first part of the pre-test.
+We conclude that they might know what the sound is, but they do not manage to connect it into that foggy scenario that we imagined people would in the first part of the pre-test.
 % subparagraph fog_ (end)
 
 % paragraph evaluation (end)
@@ -520,7 +521,7 @@ After making the proper adjustments to the sounds, we feel that we are at this p
 \subsection{Product Blueprint} % (fold)
 \label{sub:product_blueprint}
 
-Now that the visual and auditory elements have been determined upon, it is time for us to plan how to make use of the acquired data.
+Now that the visual and auditory elements have been determined, it is time for us to plan how to make use of the acquired data.
 
 \subsubsection{Visual Elements} % (fold)
 \label{ssub:visual_elements}
@@ -533,17 +534,17 @@ The visual design is based on the table from the visual pre-test (Table~\ref{tab
 \subsubsection{Audio elements} % (fold)
 \label{ssub:audio_elements}
 
-Now that the different sounds for weather categories were in place, the next step was to figure out how to make these sounds fit into our value categories. 
+When the different sounds for weather categories were in place, the next step was to figure out how to make these sounds fit into our value categories. 
 Most of the sounds can be placed and played under the fitting values, but rain (Downpour) and wind speed had to be changed in order to let people know if it had a low, medium or high value.
 In order to change these sounds we decided to use Pure Data.
 With Pure Data it was possible to change the speed of the sound and add filters so the sounds that were able to fit into our value categories.
 
-Here is the Pure Data objects we will use for the implementation:
+Here are the Pure Data objects we will use for the implementation:
 
 \paragraph{Band Pass Filter} % (fold)
 \label{par:band_pass_filter}
 
-Band Pass Filter also called [bp~] in pure data, is a filter that only allows some range of frequencies between the highest and lowest. 
+Band Pass Filter also called [bp~] in Pure Data, is a filter that only allows some range of frequencies between the highest and lowest. 
 It has three inputs. 
 The first one is the input from the audio. 
 The second input is for the center frequency that will be allowed to pass. 
@@ -573,7 +574,7 @@ An object that keeps calling after a specific amount of time (in milliseconds).
 \label{par:phasor}
 
 A phasor is a representation of a sinusoidal function. 
-This function is based on three factors, A that is the functions amplitude, $\omega$ is the frequency and $\theta$ is the phase.  
+This function is based on three factors, A is the functions amplitude, $\omega$ is the frequency and $\theta$ is the phase.  
 
 \begin{equation}
     A * \cos(\omega t + \theta)
