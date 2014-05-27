@@ -3,15 +3,15 @@
 \section{Design} % (fold)
 \label{sec:design}
 
-In this chapter we will look at the design of the prototype, which will be used in our test with the purpose of answering the FPS. 
-The design will be based on the list of requirements (see Analysis chapter). 
+In this chapter we will look at the design of the prototype, which will be used in our test with the purpose of answering the final problem statement. 
+The design will be based on the list of requirements (see chapter \ref{sec:list_of_requirements} for the list of requirements). 
 We are also going to take a look at the delimitation of our weather categories (e.g. temperature, wind speed, precipitation...). 
 Based on the requirements and delimitation, pre-tests will be designed and carried out. 
 These tests will then lead into a design blueprint of our prototype.
 
-From the list of requirements it should be possible to plan how the prototype is going to fulfil these. 
+From the list of requirements it should be possible to plan how the prototype is going to fulfil all of the specific requirements. 
 Additionally, the weather categories have to be delimited into a realistic amount of weather conditions which suits our timetable. 
-After the delimitation, the visual and auditory elements will be chosen from the results of pre-testing. 
+After the delimitation, the visual and auditory elements will be chosen from the results of pre-testing, whereof the pre testing determines the sounds and visual elements which will later be used in the actual implementation. 
 When the sounds and pictures are in place, it is time to create the blueprint of what the pictures should look like and how the sounds are going to be made. 
 Figure~\ref{fig:design1} describes the process of the actual design of the prototype.
 
@@ -45,9 +45,9 @@ We have decided to have a pre-test to decide on the images to be used in the pro
 This test involves test subjects to draw a given weather category (e.g. a drawing of certain amount of wind speed etc.). 
 To determine the sounds for the prototype it was decided to make a three-step test. 
 
-First step was making an interview that got us an idea of what sounds to use. 
+First step is to ask test participants what sounds could be used to symbolise the different weather conditions.
 The second step was to make a another interview where people had to recognize the sounds that we had chosen, based upon the first pre-test. 
-The last pre-test was to establish what value the test subjects associated with the specific weather conditions. 
+The last pre-test was to establish what value the test subjects associated with the specific weather conditions.
 
 The first two pre-tests define the sounds/sonifications for the weather conditions. 
 The last pre-test describes if the sonifications formulate the desired values of each weather condition.
@@ -78,7 +78,7 @@ We have decided to use Pure data\footnote{\url{http://puredata.info/}} since we 
 \label{sub:weather_conditions}
 
 There are a lot of different kinds of weather data. 
-Since it is not possible to cover every single category of weather data within the projects time limit and because information such as radar maps do not really lend themselves very well to sonification, we decided to make a delimitation of the weather data.
+Since it is not possible to cover every single category of weather data within the projects time limit we decided to make a delimitation of the weather data to what we deemed most relevant. This decision is not based upon prior research.
 
 Based on the research from the weather applications (See Pre-Analysis section~\ref{sub:weather_data}) the following raw weather data list was created.
 
@@ -111,7 +111,7 @@ Based on the research from the weather applications (See Pre-Analysis section~\r
  \end{itemize}
 
 After going through the data on the raw list we found that many of the weather categories did not fit the project. 
-Therefore, we decided to only use relevant weather data that people normally would use in an everyday situation. 
+Therefore, we decided to only use relevant weather data that people normally would use in an everyday situation, whereof relevance is determined by us.
 This delimitation is based on our research on which types of weather data there is available in the weather applications (See Pre-Analysis section~\ref{sub:weather_data}).
 
 % subsubsection raw_list_of_weather_data (end)
@@ -139,9 +139,8 @@ This delimitation is based on our research on which types of weather data there 
      \item \textbf{Downpour} - Rain in mm.
  \end{itemize}
 
-Going through the relevant weather data, we decided once again that the list was too long and could create problems further into the project due to limited resources and the fact that we would still be able to answer our FPS with the delimited data in mind. 
-Therefore, we decided to make another delimitation. 
-The list was further delimited based on our thoughts of what an average person would need to know in an everyday scenario, so the list of data does not necessarily represent the weather categories required to create a functional weather a	pplication. 
+Going through the weather data, we decided to make another delimitation. 
+The list was further delimited based on our thoughts of what an average person would need to know in an everyday scenario, so the list of data does not necessarily represent the weather categories required to create a functional weather application with appropriate weather categories. 
 
 % subsubsection list_of_relevant_data (end)
 
@@ -169,15 +168,15 @@ The list was further delimited based on our thoughts of what an average person w
 \subsubsection{Categories} % (fold)
 \label{ssub:categories}
 
-When the list had been delimited, it had to be converted into a design that made sure it was easy for the test subjects to answer the questions. 
-We did not use Continuous Sonification (See analysis section~\ref{par:continuous_sonification}), because it is hard for people to interpret numbers, for example: \enquote{Could you make a sound based on a temperature of 12 degrees?}. 
+
+We did not use Continuous Sonification as specified in the analysis. (See analysis section~\ref{par:continuous_sonification}), because it is hard for people to interpret numbers, for example: \enquote{Could you make a sound based on a temperature of 12 degrees?}. 
 Since it is not possible for us to go through every degree of e.g. temperature, the numbers were converted into three categories: Low, Medium and High. 
 We also decided that the weather data "Pollen" and "Visibility", should act like a warning indicator. 
 This means that the sound should only be played above or below a specific value.
-This decision was made since there is no reason to warn users about dangers when there is none. 
+This decision was made since there is no reason to warn users about weather conditions that might affect the user when there is none. 
 In this case "Pollen" will be played when there is a high amount of pollen, and "Visibility" will be played when there is low visibility.
 
-When the values had been decided , the values had to be assigned. We are getting our Low, Mid and High value from DMI\footnote{\url{http://www.dmi.dk/vejr/til-lands/byvejr/by/vis/DK/1000/K\%C3\%B8benhavn,\%20Danmark}}.
+When the values had been decided , the values had to be assigned. We are getting our Low, Mid and High value from DMI\footnote{\url{http://www.dmi.dk/vejr/til-lands/byvejr/by/vis/DK/1000/K\%C3\%B8benhavn,\%20Danmark}}. The values are estimates of low, medium and high based on the data from DMI.
 
 \begin{table}[!h]
 \centering
@@ -206,8 +205,8 @@ The visual implementation will contain images of certain weather conditions that
 
 The test took the form of a simple interview where the subject was asked to draw certain weather conditions.
 
-Because the test has no target group other than people who have at some point checked a weather forecast, the test will be conducted using random sampling.
-Random sampling selects every subject in the test from a greater group of subjects (the target group) completely at random. 
+Because the test has no target group other than people who have at some point checked a weather forecast, the test will be conducted using accidental sampling.
+accidental sampling selects every subject in the test from a greater group of subjects (the target group) completely at random. 
 Every subject has an equal chance to get picked to do the survey.
 
 The selected subjects would be given a piece of paper with three empty frames. 
@@ -257,7 +256,7 @@ The complete drawing sheet and answers to the survey can be found in appendix~\r
     \label{tab:visual_pre_test}
 \end{table}
 
-Table~\ref{tab:visual_pre_test} shows the possible solutions for the visual implementation.
+Table~\ref{tab:visual_pre_test} shows the possible solutions for the visual implementation based on the acquired results.
 The drawings were analyzed for common traits within the same condition and value, i.e. if two or more drawings of the same condition and value would contain a person, this would be interpreted as a possible common association and be included as possible solution.
 
 % subsection visual_pre_test (end)
@@ -265,11 +264,11 @@ The drawings were analyzed for common traits within the same condition and value
 \FloatBarrier
 \subsection{Sound pre-test} % (fold)
 \label{sub:sound_pre_test}
-The idea of the pre-test is to determine what sounds to choose when looking for the optimal choice of sounds. 
+The idea of the pre-test is to determine what sounds to choose when looking for the optimal choice of sounds to use the designated sonifications of each weather condition. 
 We will go through a three step audio pre-test that will provide us with the information we need. 
 The first step is meant to give us insight about what sound to use. 
 The second step is to test these previously mentioned sounds to see if people recognize what it is meant to represent. 
-The third step is to play the sounds for them and then ask what weather data these sounds represent, in a setting where we have already specified the weather category.
+The third step is to play the sounds to the test subjects and then ask what weather data these sounds represent, in a setting where we have already specified the weather category, to figure out if the specified sound also formulates the designated value of the weather condition.
 
 \subsubsection{Audio Pre-Test - Part One} % (fold)
 \label{ssub:audio_pre_test_part_one}
@@ -279,7 +278,7 @@ We then provide our own thoughts in addition to determine what the sounds should
 \paragraph{Purpose} % (fold)
 \label{par:purpose} 
 \hspace{0pt} \\
-Determine what sounds to use in further testing.
+Determine what sounds to use in each of the weather condition categories as specified in the list of delimited weather data. See \ref{ssub:list_of_delimited_weather_data}
 
 % paragraph purpose (end)
 
@@ -287,8 +286,8 @@ Determine what sounds to use in further testing.
 \label{par:description}
 \hspace{0pt} \\
 Part one was performed by interviewing people randomly selected around the AAU campus. 
-This part of the pre-test contains questions about how the testers would describe the different weather categories with a sound or a scenario, both for high and low. 
-This information is then used to pick out the sounds for the upcoming part 2.
+This part of the pre-test contains questions about how the testers would describe the different weather categories with a sound or a scenario, both for high and low values of the specific weather conditions. 
+This information is then used to acquire/develop the sounds for the pre test, where the actual sounds will be tested to see if they represent the answers acquired from this test.
 
 \begin{tabular}{l l}
 Amount of participants: & 12 test participants \\
@@ -486,7 +485,7 @@ On this list it can be seen what each test person answered to the sounds.
 \paragraph{Evaluation} % (fold)
 \label{par:pre_test_3_evaluation}
 \hspace{0pt} \\
-Most of our sounds were recognisable and provided the people testing with the right information. \newline
+Most of our sounds were recognisable and provided the people testing with the intended information. \newline
 There were a few sounds (listed below) that gave us some negative data.
 
 \subparagraph{TempMed:} % (fold)
