@@ -23,7 +23,7 @@
 *.synctex.gz
 *.run.xml
 *.bcf
-*.pdf
+main.pdf
 *.fdb_latexmk
 *.fls
 *.sublime-workspace
