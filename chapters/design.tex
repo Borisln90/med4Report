@@ -579,11 +579,16 @@ This function is based on three factors, A is the functions amplitude, $\omega$ 
     A * \cos(\omega t + \theta)
 \end{equation}
 
-We use the phasor by leaving out the frequency and will only carry on the amplitude and phase. 
-This leaves us with the option to add the frequency factor to the array.
+We use the phasor by sending in our normal frequency. This will change the sinusoidal wave and by that change the play speed of samples.
 
 % paragraph phasor (end)
 
+\paragraph{Soundfiler} % (fold)
+\label{par:Soundfiler}
+
+A soundfiler is an object that reads and writes floating point arrays to binary soundfiles. This is something we might have a use for when we import the sounds into Pure Data.
+
+% paragraph phasor (end)
 
 \subsubsection{How the sound will be implemented in Pure Data} % (fold)
 \label{ssub:how_the_sound_will_be_implemented_in_pure_data}
@@ -603,7 +608,7 @@ The way the sound will be implemented in pure data:
 First step is to make sure that the sound will be imported into the program. 
 Second step is to send the sound into an array that will split the sound into samples. 
 The third step is to detect how fast the samples normally are going to be played in order to create the same sound. 
-The fourth step is sending the sample speed into a Phasor. 
+The fourth step is sending the normal frequency into a Phasor. 
 The fifth step is to merge the play speed from the phasor with the array with the samples. 
 This will create the sound based on the play speed that has been changed. 
 The sixth step is only to be implemented if a filter is required for the sound. 
