@@ -39,8 +39,12 @@
 \usepackage{subfigure} % Allows more images in same float
 \graphicspath{{images/}}
 
+% Color highlighting
+\usepackage[usenames,dvipsnames,table]{xcolor}
+
 % ...appendix
 \usepackage{appendix}
+\usepackage[final]{pdfpages}
 
 % Biblatex! 
 \usepackage[backend=biber, style=ieee]{biblatex}
@@ -57,9 +61,6 @@
 
 % Code blocks
 \usepackage{listings}
-
-% Color highlighting
-\usepackage[usenames,dvipsnames,table]{xcolor}
 
 % Float management and float barrier 
 \usepackage[section]{placeins}
@@ -119,11 +120,11 @@
 \include{./chapters/pre_analysis}
 \include{./chapters/analysis}
 \include{./chapters/lor}
-%\include{./chapters/methods}
+% \include{./chapters/methods}
 \include{./chapters/design}
 \include{./chapters/implementation}
 \include{./chapters/evaluation}
-\include{./chapters/redesign}
+% \include{./chapters/redesign}
 \include{./chapters/discussion}
 \include{./chapters/conclusion}
 
@@ -141,6 +142,7 @@
 %------------------------------------------------------------------------------
 % once appendices are started we can't go back
 % make sure this is the last include!!!
+
 \include{./appendices/appendice}
 
 \end{document}

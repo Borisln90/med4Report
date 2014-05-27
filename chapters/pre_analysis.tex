@@ -3,22 +3,29 @@
 \section{Pre-analysis} % (fold)
 \label{sec:preanalysis}
 
-For this semester we have chosen the theme \textit{Sonification}.
-In researching sonification and audification, it was clear that there are more ways of sonifying data, depending on what kind of data is to be converted, how that information is to be displayed and interacted with. 
-Weather information contains many different types of data. 
-Some of these could be:
-temperature (degrees), sunny or cloudy (either or), wind speed (meters per second), visibility, precipitation (rain/sleet/snow/hail measured in millimeters). 
-This means that theoretically a lot of different sonification techniques can be applied to this kind of information. 
-Furthermore, we would like to investigate if visually presented weather data can actually be understood, and to which degree, if converted to non-speech sound using sonification. 
-Can sonification of some of these data maybe even make the weather information more understandable or relatable? 
-For instance, is information about wind or downpour more relatable as sound than numbers? These discussions have led us to the following Initial Problem Statement:
+For this semester we have chosen the theme \emph{Sonification}. 
+Sonification is basically the use of non-speech audio to convey or perceptualize data~\cite*{Wiki2014-2}. 
+In investigating sonification it is clear that there are more ways of sonifying data (see \enquote{Sonification Techniques} section~\ref{ssub:sonification_techniques}), depending on what kind of data is to be converted, and how that information is to be displayed and interacted with.
+Sonification is used in various applications and projects (see \enquote{Examples of uses of sonification} in section~\ref{ssub:examples_of_sonification}), but sonification does face some challenges in its current state. 
+The main problem is that it is difficult to provide adequate context for interpreting sonifications of data \cite*{Kramer1993}. 
+To see to what extend this challenge can be overcome, first one must find data to be sonified.
 
+One area which contains different sorts of data that theoretically could be sonified is weather data. 
+Some of these could be: temperature (degrees), sunny or cloudy (either or), wind speed (meters per second), visibility, precipitation (rain/sleet/snow/hail measured in millimeters). 
+These data have a different range of values. 
+For instance, temperature could be an array of degrees and overcast can be a boolean value of yes or no. 
+This means that theoretically a lot of different sonification techniques can be applied to this kind of information. 
+Aside from being sonifiable, weather information is not usually presented as sound (see \enquote{Weather Data} section~\ref{sub:weather_data}), and could therefore possibly make for an interesting study and test of whether there could be advantages to combining non-speech audio with imagery, or possibly presenting the weather data as audio on its own, in addition to answering the question of to what extent it is possible to provide adequate context for interpreting the data.
+
+We would like to investigate if visually presented weather data can actually be understood, and to which degree, if converted to non-speech sound using sonification. 
+Can sonification of some of these data maybe even make the weather information more understandable or relatable? 
+For instance, is information about wind or downpour more relatable as sound than numbers? 
+These discussions have led us to the following Initial Problem Statement:
 
 \subsection{Initial Problem Statement} % (fold)
 \label{sub:initial_problem_statement}
 
-Is it possible to successfully use sonification to convey relevant information about \newline 
-weather conditions as efficiently as visually represented weather applications?
+\enquote{Is it possible to successfully use sonification to convey relevant information about weather conditions as efficiently as visually represented weather conditions/data?}
 
 % subsection initial_problem_statement (end)
 
@@ -26,60 +33,80 @@ weather conditions as efficiently as visually represented weather applications?
 \subsection{Sonification} % (fold)
 \label{sub:sonification}
 
-Sonification is used to convey information through non-speech audio, to get a better understanding of what that is; 
-we will explain what kind of communication methods there are and examples of their function (visualization, auditory and sonification).
+Now that we have an idea of what kind of data we want to sonify, we will first look into the basics of sonification. 
+What it is, and how it is used so we can begin to plan sonification of weather data, and the best approach/technique for doing this.
 
 
-Visualization is the communication method that we perceive through our eyes e.g. posters, TV, computer, traffic lights, chat systems, pictures, sign language, body language etc. relevant to our IPS, a weather application that shows a weather forecast.
+\subsubsection{What is Sonification?} % (fold)
+\label{ssub:what_is_sonification_}
 
+Sonification is used to convey information through non-speech audio, to get a better understanding of what that is; we will explain what kind of communication methods that are most common and examples of their functions.
+These are visualization, auditory communication and sonification.
+Sonification is a subcategory of audification, and visualization is the counterpart to audification and is also the most commonly used method for displaying weather data. 
+Both of them can supplement each other~\cite[Ch. 1]{Hermann2011}.
 
-Auditory communication is data that we perceive through our ears just like sonification, but unlike sonification, auditory communication can use speech, which occurs in for instance, radio, TV, computers, telephones, all kinds of equipment and applications that allow you talk with people over distance. 
-Sonification only uses non-speech audio to convey information, an example is traffic light junctions all around Denmark. 
-When you near a crosswalk you will hear 2 different sounds. 
+Visualization is the communication method that we perceive through our eyes e.g. posters, TV, computer, traffic lights, chat systems, pictures, sign language, body language etc. 
+As of now most applications that show weather data uses visualization methods, for instance, showing the temperature in numbers or a weather condition as an image~\cite[Sec. 1]{Friendly95}.
+
+Auditory communication is data that we perceive through our ears like sonification, but unlike sonification, auditory communication can use speech, which occurs in for instance, radio, TV, computers, telephones, all kinds of equipment and applications that allow you talk with people over distance. 
+Sonification only uses non-speech audio to convey information. 
+An example is the traffic light junctions all around Denmark. When you near a crosswalk you will hear 2 different sounds. 
 Both sounds are the same, but they consist of different paces of rhythm. 
-One sound (slow) indicates it’s a red light, while the other (fast) indicates it’s safe to walk. 
-This helps blind people to know whether to cross or not, and is an example of sonification. 
-Sonification is a subset of auditory displays\footnote{\textbf{Auditory display} is the use of sound to communicate information from a computer to the user \cite*{McGookin2004}}. 
+One sound (slow) indicates it is a red light, while the other (fast) indicates it is safe to walk. 
+This helps blind people know whether to cross or not, and is an example of sonification. Sonification is a subset of auditory displays. 
 There are several uses of sonification, and these will be described in detail below.
 
-% subsection sonification (end)
+% subsubsection what_is_sonification_ (end)
 
-\subsubsection{Examples of sonification} % (fold)
+
+\subsubsection{Examples of uses of sonification} % (fold)
 \label{ssub:examples_of_sonification}
-Now that sonification has been defined, let’s delve further into the topic and see what some of the uses for sonification could be. 
+
+Now that sonification has been defined, let us delve further into the topic and see what some of the uses for sonification could be. 
 A good example to start out with is the use in the medical industry. 
-From the beginning of medical school, students are taught to use stethoscopes to listen to tissue, gases and blood pumping through veins \cite*{Barrass1999}. 
-Much of the data used for diagnosing a patient’s current status is shown in numbers or graphs, but a graph can be distracting during a demanding task, and it’s possible to synthesise sounds to represent this data instead. 
-Medical students were shown to perform better in a setting where some dynamic variables about the patients status were presented with sounds rather than graphs \cite*{Barrass1999}. 
-It is also used in MRI scans to identify unhealthy regions of the brain, and listening to such data might help a doctor diagnose an illness that otherwise goes undetected \cite*{Barrass1999}.
 
+From the beginning of medical school, students are taught to use stethoscopes to listen to tissue, gases and blood pumping through veins~\cite[Ch. 1]{Barrass1999}. 
+Much of the data used for diagnosing a patient’s current status is shown in numbers or graphs, but a graph can be distracting during a demanding task, and it is possible to synthesise sounds to represent this data instead.
+Medical students were shown to perform better in a setting where some dynamic variables about the patients status were presented with sounds rather than graphs~\cite[Ch. 1]{Barrass1999}. 
+It is also used in MRI scans to identify unhealthy regions of the brain, and listening to such data might help a doctor diagnose an illness that otherwise goes undetected~\cite[Ch. 1]{Barrass1999}. 
+There also exists multimedia programs that can make maps and text more accessible to visually impaired people.
 
-Another good example is when blind people traverse in the street; they rely on sounds such as the beeping that presents information about traffic lights. 
-There also exists multimedia programs that can make maps and text more accessible to visually impaired people. 
-Audiograf is an application that generates sound from part of a diagram selected with finger touch \cite*{Barrass1999}. 
-Other programs exist such as Mercator, which makes it easier for a blind person to use graphical computer interfaces, by mapping navigation and buttons into auditory cues. Some web browsers have also been enhanced in a similar way, by using sonifications to present download times, layout, hyperlinks and more\cite*{Barrass1999}.
+Audiograf is an application that generates sound from part of a diagram selected with finger touch~\cite[Ch. 2]{Barrass1999}. 
+Other programs exist such as Mercator, which makes it easier for a blind person to use graphical computer interfaces, by mapping navigation and buttons into auditory cues. 
+Some web browsers have also been enhanced in a similar way, by using sonifications to present download times, layout, hyperlinks and more~\cite[Ch. 2]{Barrass1999}.
 
+It is stated that gadgets and applications for the visually impaired using sonification have been mined thoroughly~\cite{Girvan2005}, but scientific alternatives also exist. 
+An example of this is the ULTRA (Universal Laboratory Training and Research Aid), which is a device for blind science students created by David Lunney and Robert Morrison. 
+ULTRA can be interfaced to give speech and present readouts from laboratory equipment such as pH probes and resistance thermometers~\cite{Girvan2005}.
 
-It is stated that gadgets and applications for the visually impaired using sonification have been mined thoroughly \cite*{Girvin2005}, but scientific alternatives also exist. An example of this is the ULTRA (Universal Laboratory Training and Research Aid), which is a device for blind science students created by David Lunney and Robert Morrison. 
-ULTRA can be interfaced to give speech and present readouts from laboratory equipment such as pH probes and resistance thermometers \cite*{Girvin2005}.
+There have also been attempts to create location devices as a replacement for guide dogs. 
+For example, Dr. Leslie Kay’s \enquote{Sonic Torch}, a device using traditional sonar technology, which uses a bat-like frequency sweep to return detailed textural information~\cite{Girvan2005}.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.95\textwidth]{images/Sonification1.png}
-    \caption{vOICe device.}
+    \includegraphics[width=0.7\textwidth]{images/Sonification1.png}
+    \caption{Sonic Torch by Dr. Leslie Kay.}
     \label{fig:sonification1}
 \end{figure}
 
-There have also been attempts to create location devices as a replacement for guide dogs.
-For example, Dr. Leslie Kay’s “Sonic Torch”, a device using traditional sonar technology, which uses a bat-like frequency sweep to return detailed textural information \cite*{Girvin2005}.
 Another attempt at a location device is created by Dr. Peter Meijer and is called vOICe. 
 This works by taking the input from a digital camera, either a mounted one or the camera from a cellphone, and using software to sweep the image with a vertical scan line. 
-It then sonifies features in the scan by representing vertical position as pitch, horizontal position as time, and brightness by increasing or decreasing volume \cite*{Girvin2005}. 
-An interesting result that came from using this device was that a user reported experiences of seeing depth in different places throughout her house. On Dr. Meijer website \url{www.seeingwithsound.com}, a demo of vOICe made in Java can be found. 
-On here the application is mentioned as “Augmented Reality for the Totally Blind”. 
-Figure~\ref{fig:sonification1} shows an example of how a vOICe device can look. 
-The camera in the center is what captures the mage then processed as previously mentioned.
-As a last example regarding blind users, Joshua Miele of the Smith Kettlewell Eye Research Institute in San Francisco has written braille support for MATLAB and the sonification toolbox for blind engineers and scientists~\cite*{Girvin2005}. 
+It then sonifies features in the scan by representing vertical position as pitch, horizontal position as time, and brightness by increasing or decreasing volume~\cite{Girvan2005}. 
+An interesting result that came from using this device was that a user reported experiences of seeing depth in different places throughout her house. 
+On Dr. Meijer website \url{www.seeingwithsound.com}, a demo of vOICe made in Java can be found. 
+On here the application is mentioned as \enquote{Augmented Reality for the Totally Blind}. 
+The above image shows an example of how a vOICe device can look. 
+The camera in the center is what captures the image then processed as previously mentioned.
+
+As a last example regarding blind users, Joshua Miele of the Smith Kettlewell Eye Research Institute in San Francisco has written braille support for MATLAB and the sonification toolbox for blind engineers and scientists~\cite{Girvan2005}.
+
+Generally, all these examples of technology tell us one thing. 
+Technologies exist in the world where people have successfully used sonification to assist in everyday situations. 
+The examples range from critical equipment dealing with life and death, to people just getting to experience what it is like to have some sort of vision. 
+This tells us that sonification has a wide area of use, and focusing further on sonification techniques and how weather data is perceived and displayed will give us a good basis to work from.
+
+There are different techniques for sonification of data. 
+These will be discussed below.
 
 % subsubsection examples_of_sonification (end)
 
@@ -87,7 +114,11 @@ As a last example regarding blind users, Joshua Miele of the Smith Kettlewell Ey
 \subsubsection{Sonification Techniques} % (fold)
 \label{ssub:sonification_techniques}
 
-One way of defining sonifications is describing them according to their sonification techniques.
+The investigation of different sonification techniques will give us options and direction for when we later have to implement these techniques to sonify weather data for testing.
+
+\paragraph{Techniques} % (fold)
+\label{par:techniques} \hspace{0pt} \\
+One way of defining sonifications is describing them according to their sonification techniques. Alberto de Campo, University for the Arts, Berlin, Germany, has made a \emph{sonification design map}~\cite[pp. 15]{Hermann2011}, which features three broad categorizations of sonification approaches.
 
 \begin{enumerate}
     \item Event-based
@@ -95,67 +126,63 @@ One way of defining sonifications is describing them according to their sonifica
     \item Continuous
 \end{enumerate}
 
+The appeal of de Campo’s approach is that it allows for blurry boundaries between the categories and offers guidance for choosing a sonification technique.
 
-\subsubsection*{Interactivity} % (fold)
-\label{ssub:interactivity}
+In the book, The Sonification Handbook, co-authors Michael Nees of Lafayette College, Easton, Pennsylvania, USA and Bruce N. Walker, Georgia Institute of Technology, Atlanta, USA, give a brief overview of the above techniques employed in sonification~\cite[pp. 16-17]{Hermann2011}:
 
+\subparagraph{Interactivity:} % (fold)
+\label{subp:interactivity}
 One of the elements to consider when discussing sonification techniques is the interactivity available (or unavailable) to the user of an auditory display. 
-Interactivity with auditory displays ranges from completely non-interactive to completely user initiated. 
-Non-interactive sonification is often referred to as “concert mode”. 
-Instances where the user is able to change and/or choose parameters of the display, has been referred to as “query based” or “conservation mode”. 
-User input may also be the driving factor of the presentation of the sound. 
+Interactivity with auditory displays ranges from completely non-interactive to completely user initiated.
+Non-interactive sonification is often referred to as \enquote{concert mode}. 
+In instances where the user is able to change and/or choose parameters of the display, has been referred to as \enquote{query based} or \enquote{conservation mode}. User input may also be the driving factor of the presentation of the sound. \enquote{For most sonifications to be useful there must at least be some sort of interactivity, even if it is just play/pause or replay of a certain sound.} 
+% subparagraph interactivity (end)
 
-\blockquote{For most sonifications to be useful there must at least be some sort of interactivity, even if it is just play/pause or replay of a certain sound.}\cite*{Hermann2011}
-
-% subsubsection interactivity (end)
-
-
-\subsubsection*{Parameter mapping (event-based sonification)} % (fold)
-\label{ssub:parameter_mapping_event_based_sonification_}
-
-\enquote{Parameter mapping represents changes in some data dimension with changes in an acoustic dimension to produce a sonification.}~\cite*{Hermann2011}
-Sound has many changeable dimension such as frequency, amplitude, phase etc. 
+\subparagraph{Parameter mapping (event-based sonification):} % (fold)
+\label{subp:parameter_mapping_event_based_sonification_}
+\enquote{Parameter mapping represents changes in some data dimension with changes in an acoustic dimension to produce a sonification}. 
+Sound has many changeable dimension such as frequency, amplitude, phase etc.
 The dimensionality of these data must however be constrained such that a perceivable display is feasible. 
 The data changes may be discrete or qualitative. 
 For instance, and alarm may be triggered by a discrete on or off threshold, or parameter mapping can be a series of discrete data which makes it seem more continuous. 
 These event-based techniques have a passive mode of interaction. 
-Some event-based sonifications are brief and offer limited opportunity for user input. 
+Some event-based sonifications are brief and offer limited opportunity for user input.
+% subparagraph parameter_mapping_event_based_sonification_ (end)
 
-% subsubsection parameter_mapping_event_based_sonification_ (end)
-
-
-\subsubsection*{Model-based sonification} % (fold)
-\label{ssub:model_based_sonification}
-
+\subparagraph{Model-based sonification:} % (fold)
+\label{subp:model_based_sonification_}
 The model-based approach is different from the event-based approaches in that instead of mapping data parameters to sound parameters, the developer builds a virtual model whose sonic responses to user input is derived from data. 
 A model is a virtual instrument with which the user can interact with. 
 The user input drives the sonification. 
-The user learns to understand the structure based on the sonic feedback of the user’s input. 
-These types of sonification usually involves large numbers of data points and a high data dimensionality.
+The user learns to understand the structure based on the sonic feedback of the user’s input.
+These types of sonification usually involves large numbers of data points and and high data dimensionality.
+% subparagraph model_based_sonification_ (end)
 
-% subsubsection model_based_sonification (end)
+\subparagraph{Audification (continues sonification):} % (fold)
+\label{subp:audification_continues_sonification_}
+Audification is a direct form of sonification where waveforms of periodic data are directly translated into sound. For instance, a Geiger counter gives the user constant sonic feedback of the radiation level by translating data of radiation level into sound.
+% subparagraph audification_continues_sonification_ (end)
 
+These are the main methods of sonification, but the different techniques might not all apply to the kind of sonification required for converting weather data. 
+The delimitation and choice of the sonification technique(s) most suited for our project will be discussed later (see Analysis chapter).
 
-\subsubsection*{Audification (continues sonification)} % (fold)
-\label{ssub:audification_continues_sonification_}
+First we must investigate which weather data makes sense to sonify. 
+This investigation will begin with looking at different weather forecast media, in order to see what different weather informations are considered to be more relevant to the general public, as it might not be relevant or necessary to cover every aspect of weather forecast information. 
 
-Audification is a direct form of sonification where waveforms of periodic data are directly translated into sound. 
-For instance, a Geiger counter gives the user constant sonic feedback of the radiation level by translating data of radiation level into sound.
+% paragraph techniques (end)
 
-% subsubsection audification_continues_sonification_ (end)
-
-% subsubsection sonification_techniques (end)
-
+% subsection sonification (end)
 
 \subsection{Weather Data} % (fold)
 \label{sub:weather_data}
 
-Now that we have an overview of what sonification is, we can investigate what weather information is and what types of weather information is usually decided as being relevant to the user.
+Now that we have an overview of what sonification is and some methods of application, we will begin to investigate what weather information is and what types of weather information is usually decided by different sources as being more relevant to the user. 
+Gathering this knowledge of popularly presented weather information will help decide which weather information is most relevant for us to sonify in order to answer the question of how far it is possible to provide adequate context for interpreting sonifications of data.
 
 
 \subsubsection{What is weather Data?} % (fold)
 \label{ssub:what_is_weather_data_}
-Weather data is derived from weather forecasting. 
+First off, what is meant by weather data? Weather data is derived from weather forecasting. 
 Weather forecasting attempts to predict the state of the atmosphere for a given location, using science and technology.
 
 \begin{quote}
@@ -163,9 +190,9 @@ Weather forecasting attempts to predict the state of the atmosphere for a given 
 \end{quote}
 
 Weather forecasts are used for a variety of different purposes. 
-For instance, weather warnings used to alert societies of dangerous weather, precipitation and temperature is important in agriculture, road surface conditions is important to traffic etc.
-On everyday basis, weather forecasts are used to determine what clothes to wear, traffic and travel time, and to plan outdoor activities on a given day. 
-Nowadays weather forecasting relies on computer-based models that take many different atmospheric factors into account. 
+For instance, weather warnings used to alert societies of dangerous weather, precipitation and temperature is important in agriculture, road surface conditions is important to traffic etc. 
+On everyday basis, weather forecasts are used to determine what clothes to wear, traffic and travel time, and to plan outdoor activities on a given day.
+Nowadays weather forecasting relies on computer-based models that take many different atmospheric factors into account~\cite{Shuman1978}.
 There is a big range of different weather data, some of these are:
 
 \begin{itemize}
@@ -189,11 +216,12 @@ There is a big range of different weather data, some of these are:
 
 These are just some of the weather data available in modern weather forecasting. 
 Not all of these are necessarily relevant to one single individual, and weather forecasts meant for the general public (not fields of work/study that require very specific weather data) limit the amount and range of weather data presented for the sake of clarity and time (both to present the information but also the time required by the individual to get the information relevant to most). 
-Below are some examples of what types of weather data have been chosen to be presented to the viewer on certain weather websites and popularly used weather applications.
+Below are some examples of what types of weather data have been chosen to be presented to the viewer on certain weather websites and popularly used weather applications. 
+This weather information will later in the report be delimitated for testing purposes of the challenge of providing adequate context for interpreting sonifications of the weather data.
 
 % subsubsection what_is_weather_data_ (end)
 
-
+\FloatBarrier
 \subsubsection*{DMI.dk (Danish Meteorological Institute)} % (fold)
 \label{ssub:dmi_dk_danish_meteorological_institute_}
 
@@ -201,7 +229,7 @@ DMI.dk is the website of the danish national meteorological institute.
 It is arguably the most well known website containing weather information, in Denmark. 
 The website contains a huge amount of weather data, which makes it a bit difficult to navigate and find even the basic weather forecast of the day/week. 
 Navigating through the site you will however be able to find information about the atmosphere in a given region such as:
-radar images of precipitation, satellite images, lightning probability, ozone measurements, snow depths, and drought indexes, in addition to to the more standard weather information such as wind speed, temperature, precipitation (represented as a graph) and so on. 
+radar images of precipitation, satellite images, lightning probability, ozone measurements, snow depths, and drought indexes, in addition to the more standard weather information such as wind speed, temperature, precipitation (represented as a graph) and so on. 
 
 \begin{figure}[!htbp]
      \centering
@@ -238,7 +266,7 @@ There is also a summary of the current day’s forecast.
 
 % subsubsection dmi_dk_danish_meteorological_institute_ (end)
 
-
+\FloatBarrier
 \subsubsection*{TV2 Vejret App} % (fold)
 \label{ssub:tv2_vejret_app}
 
@@ -284,13 +312,13 @@ This can be useful if you want a more detailed forecast with certain highlights 
 
 % subsubsection tv2_vejret_app (end)
 
-
+\FloatBarrier
 \subsubsection*{Yahoo Weather} % (fold)
 \label{ssub:yahoo_weather}
 
 Yahoo Weather is an app for iOS and Android which shows the weather in your current location, or if you want, in other locations around the world as well. 
 The app contains a lot of the same information that other weather applications do, it is the design of the interface and layout which sets it apart from other apps. 
-The application has received the 'Apple Design Award' because of it's aesthetics. 
+The application has received the \enquote*{'Apple Design Award'} because of it's aesthetics. 
 One of the features of the design, which has gotten a lot of praise, is that the app finds beautiful images of your location on Flickr (an online image database), taking into account the time of the day and current weather condition, of your location and the photos, and uses these as the background of the weather information. 
 Aside from this unique approach to visually presenting you surroundings, the interface itself was also very well received by critics. 
 
@@ -325,9 +353,9 @@ For the 5 and 10 day forecasts there is only information about:
 \end{itemize}
 
 Because of the apps very minimalistic design approach the screen is not overloaded with all sorts of data about the weather.
-It uses subtle animations  eg. a windmill spinning at a rate according to the current wind speed to illustrate more palpable information about the wind speed. 
+It uses subtle animations eg. a windmill spinning at a rate according to the current wind speed to illustrate more palpable information about the wind speed. 
 Another way the application tries to present information relevant to the user, is by adding customization. 
-The user can drag the different 'modules' around to bring the most viewed ones to the top of the screen, limiting the amount of scrolling around to get information you want.
+The user can drag the different modules around to bring the most viewed ones to the top of the screen, limiting the amount of scrolling around to get information you want.
 
 \begin{figure}[!htbp]
     \centering
@@ -340,8 +368,8 @@ So all in all, the app does contain a lot of information about the weather, and 
 
 % subsubsection yahoo_weather (end)
 
-
-\subsubsection{InstaWeather} % (fold)
+\FloatBarrier
+\subsubsection*{InstaWeather} % (fold)
 \label{ssub:instaweather}
 
 InstaWeather is a weather application that focuses a lot on being a visual application. 
@@ -365,18 +393,18 @@ It does not however tell us much about what is in general considered to be chose
 
 % subsubsection instaweather (end)
 
+Which weather information to be sonified for our test will be decided later in the Design chapter through user testing.
+
 % subsection weather_data (end)
 
 
 \subsection{Final Problem Statement} % (fold)
 \label{sub:final_problem_statement}
 
-After researching sonification and relevant weather data we find that there are many different ways of using sonification to present different types of data. 
-The various weather information from the different sources researched, can be presented in different ways through sonification, but some of the data could prove more challenging to sonify. 
-In order to investigate to what extend we can convey these data as non-speech sound, through the use of sonification, the presented information will be compared to the more typical, visual way of presenting these, to figure out if the data can be intuitively understood as sound effects.
+Now that we have an idea of the process of sonification, and having revised typical visually presented weather forecasts and their content, we have to find out whether it is possible to provide adequate context for interpretation of weather data with the use of sonification. 
+This will be investigated by comparing to visual data presentation in order to see to what extent it is possible to provide an understanding of these data as non-speech audio. This brings us to the final problem statement:
 
-
-\textit{``To what extent is it possible to convey weather information, solely as a nonspeech auditory display, using sonification techniques, and be as intuitively understandable as visually presented weather information, where intuitive is defined as knowing by intuition?''}
+\enquote{To what extent is it possible to convey weather information, solely as a nonspeech auditory display, using sonification techniques, and be as intuitively understandable as visually presented weather information, where intuitive is defined as knowing by intuition?}
 
 % subsection final_problem_statement (end)
 

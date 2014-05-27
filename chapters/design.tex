@@ -3,10 +3,17 @@
 \section{Design} % (fold)
 \label{sec:design}
 
-Now that the list of requirements have been created, it is time to create a plan of how the product is going to fulfill these requirements. 
-When that has been done the weather categories has to be delimited into a realistic amount of weather conditions. 
-After that the visual and audial elements have to be found by pre-testing. 
-In the end when the sounds and pictures have been found it is time to create the blueprint of how the pictures should look like and how the sounds is going to be created.
+In this chapter we will look at the design of the prototype, which will be used in our test to try and answer the FPS. 
+The design will be based on the list of requirements (see Analysis chapter). 
+We are also going to take a look at the delimitation of our weather categories (e.g. temperature, wind speed, precipitation...). 
+Based on the requirements and delimitation, pre-tests will be designed and carried out. 
+These tests will then lead into a design blueprint of our prototype.
+
+From the list of requirements it should be possible to plan how the prototype is going to fulfill these. 
+Additionally, the weather categories have to be delimited into a realistic amount of weather conditions which suits our timetable. 
+After the delimitation the visual and auditory elements will be chosen from the results of pre-testing. 
+When the sounds and pictures are in place, it is time to create the blueprint of what the pictures should look like and how the sounds are going to be made. 
+Figure~\ref{fig:design1} describes the process of the actual design of the prototype.
 
 \begin{figure}[!htbp]
     \centering
@@ -16,28 +23,74 @@ In the end when the sounds and pictures have been found it is time to create the
 \end{figure}
 
 
-\subsection*{A design to meet all the requirements} % (fold)
+\subsection{A design to meet all the requirements} % (fold)
 \label{sub:a_design_to_meet_all_the_requirements}
 
+To get an overview of how the requirements are going to be fulfilled, the requirements have been split up into two categories. Requirements for testing and requirements for the prototype itself.
 
+\subsubsection{Testing} % (fold)
+\label{ssub:testing}
+
+General requirements:
+
+\begin{itemize}
+    \item The prototype must contain sounds that range in different sound-parameters within the same weather category, such as varying amounts of rain.
+    \item The visuals provided in testing must be based on results from either pre-testing and/or SOTA pre-analysis
+    \item The sounds must have a meaning attached to them (i.e. semiosis)
+    \item Symbolic representation is used to convey our message about the weather
+\end{itemize}
+
+We have decided to have a pre-test to decide on the images to be used in the prototype. 
+This test involves test subjects to draw a given weather category (e.g. a drawing of certain amount of wind speed etc.). 
+To decide on the sounds for the prototype it was decided to make a three-step test. 
+
+First step was making an interview that got us an idea of what sounds to use. 
+The second step was to make a another interview where people had to recognize the sounds that we had chosen, based upon the first pre-test. 
+The last pre-test was to establish what value the test subjects associated with the specific weather conditions. 
+
+The first two pre-tests define the sounds/sonifications for the weather conditions. 
+The last pre-test describes if the sonifications formulate the desired values of each weather condition.
+
+% subsubsection testing (end)
+
+
+\subsubsection{Prototype} % (fold)
+\label{ssub:prototype}
+
+Program functionalities must be able to:
+\begin{itemize}
+    \item Import sound file
+    \item Play sound file
+    \item Pause sound file
+    \item Change the tempo of the sound
+    \item Add filters to the sounds
+\end{itemize}
+
+We have decided to use Pure data\footnote{\url{http://puredata.info/}} since we already have some knowledge in this program and know it can fulfill our requirements. 
+
+% subsubsection prototype (end)
 
 % subsection a_design_to_meet_all_the_requirements (end)
 
 
-\subsection*{Weather Conditions} % (fold)
+\subsection{Weather Conditions} % (fold)
 \label{sub:weather_conditions}
 
 There are a lot of different kinds of weather data. 
-Since it is not possible to cover every single category of weather data within the projects time limit, we made the decision to make a delimitation of the categories.
+Since it is not possible to cover every single category of weather data within the projects time limit and because information such as radar maps do not really lend themselves very well to sonification, we decided to make a delimitation of the weather data.
 
-
-Based on the research from the weather applications the following raw weather data list was created.
+Based on the research from the weather applications (See Pre-Analysis section~\ref{sub:weather_data}) the following raw weather data list was created.
 
 \subsubsection*{Raw list of weather data} % (fold)
 \label{ssub:raw_list_of_weather_data}
 
 \begin{itemize}
      \item \textbf{Temperature/Dewpoint} - Current air temperature 2 meters above terrain.
+     \begin{itemize}
+         \item Day temperature
+         \item Night temperature
+         \item Average temperature
+     \end{itemize}
      \item \textbf{Wind speed} - Average wind speed over 10 minutes, 10 meters above terrain.
      \item \textbf{Wind direction} - Average wind direction in degrees.
      \item \textbf{Air pressure} - Pressure at sea level measured i hPa (Hectopascal).
@@ -53,10 +106,12 @@ Based on the research from the weather applications the following raw weather da
      \item \textbf{Fronts} 
      \item \textbf{Source Regions} - Where the air is coming from.
      \item \textbf{Drought} - Risk of drought. Presented as a scale.
+     \item \textbf{Downpour} - Rain in mm.
  \end{itemize}
 
-After going through the data on the raw list we found that many of the weather categories didn’t suit into our project. 
-So we decided to only taking relevant weather data that people normally would use in an everyday situation.
+After going through the data on the raw list we found that many of the weather categories didn’t fit the project. 
+So we decided to only use relevant weather data that people normally would use in an everyday situation. 
+This delimitation is based on our research on what weather data there is available in the weather apps (See Pre-Analysis section~\ref{sub:weather_data}).
 
 % subsubsection raw_list_of_weather_data (end)
 
@@ -66,6 +121,11 @@ So we decided to only taking relevant weather data that people normally would us
 
 \begin{itemize}
      \item \textbf{Temperature/Dewpoint} - Current air temperature 2 meters above terrain.
+     \begin{itemize}
+         \item Day temperature
+         \item Night temperature
+         \item Average temperature
+     \end{itemize}
      \item \textbf{Wind speed} - Average wind speed over 10 minutes, 10 meters above terrain.
      \item \textbf{Wind direction} - Average wind direction in degrees.
      \item \textbf{Humidity} - Current relative humidity measured 2 meters above terrain, measured in percent.
@@ -75,11 +135,12 @@ So we decided to only taking relevant weather data that people normally would us
      \item \textbf{Wind chill} - The winds effect on air temperature.
      \item \textbf{Visibility} - How far can you see with clear line of sight.
      \item \textbf{UV-index} - Intensity of UV radiation.
+     \item \textbf{Downpour} - Rain in mm.
  \end{itemize}
 
-After going through the relevant weather data we decided that the list still was too long and could create problems further into problems with our time limit. 
-So in order to keep the schedule and not create a long and boring test, we decided to make a delimited list. 
-This list was based on what an average person would need to know in an everyday scenario.
+Going through the relevant weather data we again decided that the list was too long and could create problems further into the project do to limited resources and the fact that we would still be able to answer our FPS with the delimited data. 
+Therefore, we decided to make another delimitation. 
+The list was further delimited based on our thoughts of what an average person would need to know in an everyday scenario, so the list of data does not necessarily represent the weather categories required to create a functional weather app. 
 
 % subsubsection list_of_relevant_data (end)
 
@@ -89,11 +150,16 @@ This list was based on what an average person would need to know in an everyday 
 
 \begin{itemize}
      \item \textbf{Temperature/Dewpoint} - Current air temperature 2 meters above terrain.
+     \begin{itemize}
+         \item Day temperature
+     \end{itemize}
      \item \textbf{Wind speed} - Average wind speed over 10 minutes, 10 meters above terrain.
      \item \textbf{Precipitation} - Rain/sleet/snow/hail over the past ten minutes measured in mm.
      \item \textbf{Pollen Forecast} - The potency of the pollen.
      \item \textbf{Visibility} - How far can you see with clear line of sight.
      \item \textbf{Cloud Cover.}
+     \item \textbf{UV-index} - Intensity of UV radiation.
+     \item \textbf{Downpour} - Rain in mm.
  \end{itemize}
 
 % subsubsection list_of_delimited_weather_data (end)
@@ -102,11 +168,31 @@ This list was based on what an average person would need to know in an everyday 
 \subsubsection{Categories} % (fold)
 \label{ssub:categories}
 
-Now that the list is has been delimited it has to be converted into a design that makes sure it’s easy for the people performing our test to answer on our questions. 
-It’s hard for people to connect with numbers example: “Could you make a sound based on a temperature on 12 degrees” and since it’s not possible for us to go through every degree, the numbers were converted into three categories: Low, Medium and High. 
-We also decided that the following weather data: Pollen and Visibility should act like a warning indicator. 
+Now that the list had been delimited, it had to be converted into a design that made sure it was easy for the test subjects to answer the questions. 
+We did not use Continuous Sonification (See analysis section~\ref{par:continuous_sonification}), because it is hard for people to interpret numbers, for example: \enquote{Could you make a sound based on a temperature of 12 degrees?}. 
+Since it is not possible for us to go through every degree of e.g. temperature, the numbers were converted into three categories: Low, Medium and High. 
+We also decided that the following weather data: Pollen and Visibility, should act like a warning indicator. 
 This means that the sound should only be played above or below a specific value.
+This decision was made since there is no reason to warn people about dangers when there is none. 
+In this case Pollen will be played when there is a high amount of pollen, and Visibility will be played when there is low visibility.
 
+Now that the values have been decided , the values have to be assigned. We are getting our Low, Mid and High value from DMI\footnote{\url{http://www.dmi.dk/vejr/til-lands/byvejr/by/vis/DK/1000/K\%C3\%B8benhavn,\%20Danmark}}.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{l | l | l | l}
+Category & Low & Medium & High \\
+\hline \hline
+Temperature & 0'C & 15'C & 30'C \\
+Wind Speed & 5 m/s & 17 m/s & 32 m/s \\
+Pollen Forecast & 0 - 30 & & 30 - 100 \\
+Visibility & 10 m & & 10 km \\
+Downpour & 0 mm & 3 mm & 10 km \\
+UV-index & 3 & 3 - 6 & 7 - 8 
+\end{tabular}
+\caption{Category values}
+\label{tab:category_values}
+\end{table}
 % subsubsection categories (end)
 
 % subsection weather_conditions (end)
@@ -130,8 +216,8 @@ The subject would then draw their association.
 The subject would then be asked to make another drawing of the same weather condition but with a different value. 
 i.e. if the subject had first been asked to draw a hot day, they would then be asked to draw a cold day and then an average day.
 
-5 people for each weather condition was asked to participate. 
-The complete drawing sheet and answers to the survey can be found in appendix (XX).
+5 people for each weather condition was asked to participate, 35 in total. 
+The complete drawing sheet and answers to the survey can be found in appendix~\ref{sec:visual_pre_test_raw_results}.
 
 \begin{table}[!htbp]
     \centering
@@ -175,184 +261,271 @@ The drawings were analyzed for common traits within the same condition and value
 
 % subsection visual_pre_test (end)
 
-
+\FloatBarrier
 \subsection{Sound pre-test} % (fold)
 \label{sub:sound_pre_test}
+The idea of the pre-test is to determine what sounds to choose when looking for the optimal choice of sounds. 
+We will go through a three step audio pre-test that will provide us with the information we need. 
+The first step is meant to give us insight about what sound to use. 
+The second step is to test these previously mentioned sounds to see if people recognize what it is meant to represent. 
+The third step is to play the sounds for them and then ask what weather data these sounds represent, in a setting where we have already specified the weather category.
 
-\subsubsection{Test 1} % (fold)
-\label{ssub:test_1}
+\subsubsection{Audio Pre-Test - Part One} % (fold)
+\label{ssub:audio_pre_test_part_one}
+This first part of the pre-test was meant to give an idea of what sounds to use according to the feedback given from interviews. 
+We then provide our own thoughts in addition to determine what the sounds should be.
 
-\subsubsection*{goal} % (fold)
-\label{ssub:test_1_goal}
+\paragraph{Purpose} % (fold)
+\label{par:purpose} 
+\hspace{0pt} \\
+Determine what sounds to use in further testing.
 
-Find sound suggestions that can convey the weather data the most efficient, and take that data to test 2.
+% paragraph purpose (end)
 
-% subsubsection goal (end)
+\paragraph{Description} % (fold)
+\label{par:description}
+\hspace{0pt} \\
+Part one was performed by interviewing people randomly selected around the AAU campus. 
+This part of the pre-test contains questions about how the testers would describe the different weather categories with a sound or a scenario, both for high and low. 
+This information is then used to pick out the sounds for the upcoming part 2.
 
-\subsubsection*{Procedure} % (fold)
-\label{ssub:test_1_procedure}
+\begin{tabular}{l l}
+Amount of participants: & 12 test participants \\
+Test subject sampling: & Convenience sampling: Aalborg University students. \\
+Estimated length of test: & Around 10 min per test subject. \\
+Test location: & Area on and around Aalborg university. \\
+Date and time: & When appropriate.
+\end{tabular}
 
-Since we have to find suggestions to sounds that can convey the weather condition through sonification, we will have to ask the test participant, what kind of sound they would believe could represent/symbolize weather data the best e.g. boiling water or sizzling bacon on a pan could represent hot weather. 
-The group will ask 7 questions in total, about all the different types of weather data we believe most users are looking at.
-The questions include and answer to both a high and a low value. 
-The person then have to their best of the ability to suggest a sound which would represent the weather data the best, we will ask 10-15 people in total and the questions are as following:
+% paragraph description (end)
+
+\paragraph{Results} % (fold)
+\label{par:results}
+\hspace{0pt} \\
+See appendix~\ref{sub:pre_test_1_results} for results.
+
+These results have been placed together for each category, where you can see answers for both high and low values. 
+
+% paragraph results (end)
+
+\paragraph{Evaluation} % (fold)
+\label{par:evaluation}
+\hspace{0pt} \\
+When analyzing the data that has been gathered, it was seen that most of the categories have the same answers. 
+Our sounds were based on a mix of how the majority wanted the sounds to be like and what we believed could be a recognizable sound. 
+The following is an overview of our thought process. 
+
+\subparagraph{Temperature} % (fold)
+\label{subp:temperature}
+\emph{High:} We noticed that a high pitched sound was a frequent answer among the participants. We went with this in mind when choosing the soun. 
+The sound that we ended up choosing, was inspired by one of the participants that answered \enquote{a boiling kettle}. \newline
+\emph{Low:} The majority answered \enquote{breaking ice} and \enquote{snow}, but since we are using that for Precipitation - Snow it is not an option. 
+We instead went with the \enquote{teeth grinding} sound.
+% subparagraph temperature (end)
+
+\subparagraph{Wind Speed} % (fold)
+\label{subp:wind_speed}
+\emph{High:} A \enquote{high wind gust} seemed to be the most common answer, so that is what we went with.
+\emph{Low:} A \enquote{low wind gust} seemed to be the most common answer, so that is what we went with.
+% subparagraph wind_speed (end)
+
+\subparagraph{Precipitation} % (fold)
+\label{subp:precipitation}
+\emph{Rain:} All the answers to this were \enquote{rain}, so we went with rain as our sound.
+\emph{Snow:} Most of the answers to this were \enquote{snow}, but since snow does not have a sound then we went with footsteps in the snow.
+\emph{Hail:} All the answers to this were \enquote{hail}, so we went with hail as our sound.
+% subparagraph precipitation (end)
+
+\subparagraph{Pollen Forecast} % (fold)
+\label{subp:pollen_forecast}
+\emph{High:} \enquote{A sneeze} was the most common answer, so that is what we chose as our sound.
+\emph{Low:} Because we are going with pollen as a warning indicator this question was only stated to satisfy our curiosity. 
+The test participants did not give any real responses to this question. 
+% subparagraph pollen_forecast (end)
+
+\subparagraph{Visibility} % (fold)
+\label{subp:visibility}
+\emph{Low:} Most of the people we asked described a foggy scenario as seen in movies. 
+Since this is the scenario most people think of, we chose a \enquote{fog horn} sound to remind them of this scenario in the hopes that they would associate it with a foggy day.
+% subparagraph visibility (end)
+
+% paragraph evaluation (end)
+
+% subsubsection audio_pre_test_part_one (end)
+
+
+\subsubsection{Audio Pre-Test - Part Two} % (fold)
+\label{ssub:audio_pre_test_part_two}
+
+\paragraph{Purpose} % (fold)
+\label{par:pre_test_2_purpose}
+\hspace{0pt} \\
+The second part of the pre-test is based upon the results given from pre test 1 (See section~\ref{ssub:audio_pre_test_part_one}). 
+The results has been evaluated, and sounds that could be used as a sonification of the specific weather conditions has been found/developed. 
+The following test is conducted as we want to ensure that the chosen sounds actually represent the results from the previous test and can be used in the designated prototype. 
+The test will elaborate upon the sounds and will make it possible to evaluate whether the sounds are understood or not, and what the test subjects think that the sounds intuitively implies.
+% paragraph purpose (end)
+
+\paragraph{Description} % (fold)
+\label{par:pre_test_2_description}
+\hspace{0pt} \\
+The procedure of the test was conducted in the following manner. 
+A single test subject was asked to listen to the acquired/constructed sounds, and was then asked to write down what he/she relates to the sound e.g. what the subject thought of the sound actually implies. 
+The test subject was given no prior information to the test, and was unaware of everything but the test procedure.
+This ensured that the test subject was given no information that could be used to assume anything based upon the sounds and somewhat bias the results, as we were looking for the intuitive understanding of the presented sounds.
+
+\begin{tabular}{l l}
+Amount of participants: & 10 test participants \\
+Test subject sampling: & Convenience sampling \\
+Estimated length of test: & 10 min per test subject. \\
+Test location: & Area on and around Aalborg university. \\
+Date and time: & When appropriate.
+\end{tabular}
+
+% paragraph description (end)
+
+\paragraph{Results} % (fold)
+\label{par:pre_test_2_results}
+\hspace{0pt} \\
+See appendix~\ref{sub:pre_test_2_results} for the acquired test results.
+
+\enquote{List of sounds} represents the sounds that were played to each individual test subject in that specific order.
+\enquote{Test x} represents answers written down from each test participant in each column, where the data represents the denoted answer from the test participant.
+The right sided column to each test section represents the interpretation of results.
+
+The result interpretations are divided into three categories: \newline
+\textbf{Correct} - Represents a correct answer. \newline
+\textbf{Correct()} - Represents an answer that is associated with the correct answer, as decided by us, and is therefore marked as correct. 
+The associations are deemed correct by us and does not represent a scientific decision. \newline
+\textbf{Incorrect} - Represents an incorrect answer. 
+Either the sound was not guessed, indicated by \enquote{-}, in the test results, or the responses was not in any way associated with the sound, as deemed by us.
+
+% paragraph results (end)
+\pagebreak[3]
+\paragraph{Evaluation} % (fold)
+\label{par:pre_test_2_evaluation}
+\hspace{0pt} \\
+Table \ref{tab:pre_test_2_evaluation} illustrates the amount of correct answers in percentages.
+
+\begin{table}[!hb]
+\centering
+\begin{tabular}{l l r c}
+   & Sound &  Answered correctly & \\
+\hline
+1. & Hail - Downfall hail & 70\% & 7/10 \\
+2. & Rain - Downfall rain & 100\% & 10/10 \\
+3. & Snow - Downfall snow & 10\% & 1/10 \\
+4. & Birds - Downfall nothing & 60\% & 6/10 \\
+5. & Horn - Fog & 90\% & 9/10 \\
+6. & Sneeze - Pollen & 90\% & 9/10 \\
+7. & Kettle - High temperature & 90\% & 9/10 \\
+8. & Clattering Teeth - Low temperature & 0\% & 0/10 \\
+9. & Small breeze - Medium temperature & 70\% & 7/10 \\
+10. & Wind - Wind speed & 100\% & 10/10
+\end{tabular}
+\caption{Pre-test 2 evaluation}
+\label{tab:pre_test_2_evaluation}
+\end{table}
 
 \begin{enumerate}
-    \item Temperature.
-    \item Wind speed. 
-    \item Precipitation (rain/sleet/snow/hail)
-    \item Pollen
-    \item Wind Chill
-    \item Visibilty
-    \item UV-index
+    \item \textbf{Hail} - The majority of test subjects answered \enquote{hail}, which was the desired implication of the sound. 
+    We suspect that when the test subjects are aware of the subject, being weather - and thereafter will have to guess what the sound implies - the sound will suffice.
+    \item \textbf{Rain} - All test subjects answered correctly, therefore the sound is deemed to require no alterations or changes.
+    \item \textbf{Snow} - A low amount of test participants, around 10\%, was able to associate the sound with snow as intended. We therefore chose to replace the sound.
+    \item \textbf{Birds} - A majority of 60\% answered correctly. This indicates that while most answers correct, adjustments might ensure that a larger percentage of test subjects will answer correct. Plausible alterations will be decided by us.
+    \item \textbf{Horn} - A Majority of 90\% answered correctly. Therefore no alterations will be made.
+    \item \textbf{Sneeze} - A Majority of 90\% answered correctly. Therefore no alterations will be made.
+    \item \textbf{Kettle} - A Majority of 90\% answered correctly. Therefore no alterations will be made.
+    \item \textbf{Teeth} - No test participants were able to answer correctly. Therefore we will replace the sound.
+    \item \textbf{Small breeze} - The majority of 70\% was able to answer correctly. Adjustments will be made, and might ensure that a larger percentage of the subjects will be able to answer correct. Plausible alterations will be decided by us.
+    \item \textbf{Wind} - All test subjects answered correctly, therefore the sound is deemed to require no alterations or changes.
 \end{enumerate}
 
-We hope our result can gain us further progress to finding out how to sonify weather conditions.
+% paragraph evaluation (end)
 
-% subsubsection procedure (end)
+% subsubsection audio_pre_test_part_two (end)
 
-\subsubsection*{Evaluation} % (fold)
-\label{ssub:test_1_evaluation}
+\subsubsection{Audio Pre-Test - Part Three} % (fold)
+\label{ssub:audio_pre_test_part_three}
+Since the previous part of the pre-test we replaced the LowTemp sound (Teeth) with a new sound that has been tested around the campus and is being deemed ready for use. 
+A small delimitation has also been made to downpour. 
+It now only covers rain since we encountered a problem that we didn’t think about at the early stages. 
+The problem was that we designed downpour to be changed by play speed of the sound, and the only sound capable of being modified in this manner is rain.
 
-Check appendix for test results. 
-Looking through our result from the questionnaire, we can see consistent/similar answer to some of our questions from the test persons. 
-The answers to the temperature (question 1) we got several answers that they believed water boiling would symbolize the high temperature the best, and that ice breaking or a human cold reaction would represent the low value the best. 
-The wind speed (question 2) answers were mostly consistent that they wanted sounds of wind, but with different speed level for the high and low value. 
-Also in precipitation (question 3) the users wanted the specific weather condition sound on objects was the best way for them to relate(the test persons were not asked for a high and low value here). 
-The pollen forecast (question 4) we found out a sneeze would symbolize the high value the best, but the suggestions to the low value was insufficient since most of the answers where pass and the user simply did not know what could symbolize it the best.
+Now that every sound has been deemed ready for use, we are able to proceed into the third step of the pre-test. 
+In this step we are going to play the sound and give information about what weather category it is. 
+We then want our testers to answer what weather data type they believe the sound represents.  
 
-Wind chill (question 5) gave us a varied range of answers but the group decided to not sonify wind chill, since the suggestions from the test where too similar to wind speed. 
-Visibility (question 6) had a variety of suggestions but the one the group concluded would be the best symbolization of visibility where fog horn/machine which 2 participant also suggested. 
-The UV-index (question 7) had consistent answers that the users believe that frying ``food'' would symbolize the UV-index the best, but after some discussion in the group we decided not to Sonify the UV-index, since it could add confusion since its similar to our high temperature sounds. 
-the group will now find the sounds the participants have suggested, and use those sounds in Test 2 to see if the suggestions and the answers in test 2 is consistent and match each other.
+\paragraph{Purpose} % (fold)
+\label{par:pre_test_3_purpose}
+\hspace{0pt} \\
+The purpose of this part of the pre-test is to make sure that our sounds are recognisable with a weather data type when combined with a weather category.
+% paragraph purpose (end)
 
-% subsubsection evaluation (end)
+\paragraph{Description} % (fold)
+\label{par:pre_test_3_description}
+\hspace{0pt} \\
+\begin{tabular}{l l}
+Amount of participants: & 10 test participants \\
+Test subject sampling: & Convenience sampling \\
+Estimated length of test: & 15 min per test subject. \\
+Test location: & Ballerup, Albertslund, and Aalborg university. \\
+Date and time: & When appropriate.
+\end{tabular}
+% paragraph description (end)
 
-\subsubsection*{What could have been done better?} % (fold)
-\label{ssub:test_1_what_could_have_been_done_better_}
+\paragraph{Results} % (fold)
+\label{par:pre_test_3_results}
+\hspace{0pt} \\
+See appendix \ref{sub:pre_test_3_results} for results.
 
-Our test in itself was decent, but the group should probably have made a test before this to hear what kind of data the user is looking for, when they want to know the weather conditions. 
-Since our questions is only taken from our own research in what kind of weather data there is.
+On this list it can be seen what each test person answered to the sounds.
+% paragraph results (end)
 
-% subsubsection what_could_have_been_done_better_ (end)
+\paragraph{Evaluation} % (fold)
+\label{par:pre_test_3_evaluation}
+\hspace{0pt} \\
+Most of our sounds were recognisable and provided the people testing with the right information. \newline
+There were a few sounds (listed below) that gave us some negative data.
 
-% subsubsection test_1 (end)
+\subparagraph{TempMed:} % (fold)
+\label{subp:tempmed_}
+People gave many different answers for this sound. 
+This is a problem and this sound has to be replaced and tested once more.
+% subparagraph tempmed_ (end)
 
+\subparagraph{Pollen:} % (fold)
+\label{subp:pollen_}
+Most of the people got the correct weather category but some also answered \enquote{cold}. 
+Since it is a sneeze this is something that we should have expected. 
+We will try to modify the to make sure that test participants make a clearer association to pollen. 
+% subparagraph pollen_ (end)
 
-\subsubsection{Test 2} % (fold)
-\label{ssub:test_2}
+\subparagraph{Fog:} % (fold)
+\label{subp:fog_}
+All the people that answered the question got the answer correct. 
+However, we also had some people who were unable to answer the question. 
+We conclude that they might know what the sound is but don’t connect it into that foggy scenario that we imagined people would in the first part of the pre-test.
+% subparagraph fog_ (end)
 
-\subsubsection*{Goal} % (fold)
-\label{ssub:test_2_goal}
+% paragraph evaluation (end)
 
-The goal for test 2 is to see if the answers are consistent to our suggestions in test 1.
+After making the proper adjustments to the sounds, we feel that we are at this point ready to implement them, and use them for further testing.
 
-% subsubsection goal (end)
-
-\subsubsection*{Procedure} % (fold)
-\label{ssub:test_2_procedure}
-
-Test 2 will require new testers, so that we can lessen a biased answer as much as possible. 
-We have found the sounds which where suggested in our Test 1, and it’s now time to test out the sounds we have found. 
-We will ask 10 people in total, and the persons we test will have no knowledge about our project, and we will not tell them what the sounds are about. 
-The test persons will be represented with a sound, and the person being tested then have to answer to what sound it is. 
-The reason is to see if the users can without knowing what the project is about, see a connection from the sound to a weather condition. The sounds are as following:
-
-\begin{enumerate}
-    \item Hail – Downfall Hail
-    \item Rain – Downfall Rain
-    \item Snow – Downfall Snow
-    \item Birds – Downfall Nothing
-    \item Horn - Fog
-    \item Sneeze - Pollen
-    \item Kettle – High Temperature 
-    \item Teeth – Low Temperature
-    \item Small breeze – Medium Temperature
-    \item Wind – Wind Speed
-\end{enumerate}
-
-The persons being tested will then hear e.g. sound 1 hail, and from that sound they have to write down what they believe what that sound is. 
-After they have answered to all of the sounds, they will then hear all the sounds once again, but this time they will first hear what our project is about, and what we wanted the sound to represent. 
-They then have to answer yes or no if they believe this could symbolize that weather condition. 
-This will hopefully help our project to see if the sound we have need to be adjusted or that we are on the right track.
-
-% subsubsection procedure (end)
-
-\subsubsection*{Evaluation} % (fold)
-\label{ssub:test_2_evaluation}
-
-After looking through our answers to the test, we could see that a lot of our sounds symbolized that specific weather condition quite sufficiently, but we did also notice that some of the sounds needed adjustments, since the sounds where to confusing for the users. 
-The sounds in question are sound 3 and 8. 
-The sound clip 3 (Snow) is too short and it’s hard to hear that it is a person walking in snow since it only has one walk cycle (one step). 
-Sound clip 3 will have to be longer and more understandable. 
-The sound clip 8 (Teeth) showed a challenge to understand since the testers heard it as a clock and not teeth clattering.
-These 2 sounds will be changed for the next test, but our 8 other sound showed consistent answers to its intentional weather conditions, so we will keep them and perhaps throw them through some filters in PD (PureData).
-
-% subsubsection evaluation (end)
-
-\subsubsection*{What could have been done better?} % (fold)
-\label{ssub:test_2_what_could_have_been_done_better_}
-
-The test designed and executed well, but a thing we could have done better was instead of asking if it could represent our intended weather condition with a yes or no, we should have made it in to a percentage answer. 
-It could have shown us better answers to how sure they were, that the sound could symbolize this weather conditions.
-
-% subsubsection what_could_have_been_done_better_ (end)
-
-% subsubsection test_2 (end)
-
-
-\subsubsection{Test 3} % (fold)
-\label{ssub:test_3}
-
-\subsubsection*{Goal} % (fold)
-\label{ssub:test_3_goal}
-
-Test the new sounds, as to see if they symbolize it better.
-
-% subsubsection goal (end)
-
-\subsubsection*{Procedure} % (fold)
-\label{ssub:test_3_procedure}
-
-Our new test 2 Re. 
-The user where told what our project was about unlike test 2, and they were also told before every sound, what this sound main category is (temperature, weather atmosphere and weather condition) but they themselves had to answer what type it was afterwards e.g. hot, rainy, stormy etc. 
-The sounds were played at random so they wouldn’t think of an exclusion method, since our sound cycle was first hot, med then low. 
-The sounds we use are the same as in test 2, except the sound 3 and 8 which we had to remake.
-
-% subsubsection procedure (end)
-
-\subsubsection*{Evaluation} % (fold)
-\label{ssub:test_3_evaluation}
-
-After remaking sound 3 and 8, we can conclude that the sounds we have as of now symbolize the weather conditions on an acceptable level. 
-We have not tested other sounds and can therefore not conclude there aren’t better choices, but the answers show consisting result to our desired intentions, only in some cases where the result not what we wished for, but the goal for the test was to see if our new sounds worked and would it help the user to recognize the symbolization of the sounds if they knew what our project was about. 
-Our goal now is to see if we can manipulate these sounds and see if the users can see to what degree the sound is. 
-As we have tested with temperature both low, medium and high we now have to see if we can manipulate the other sounds through filters to show the same result in the other categorizes such as rain and wind speed.
-
-% subsubsection evaluation (end)
-
-\subsubsection*{What could have been done better?} % (fold)
-\label{ssub:test_3_what_could_have_been_done_better_}
-
-The test in itself was satisfying enough for our goal, but to make the results more viable, the group should have tested more people, since 10 persons cannot really conclude that our sounds are somewhat correct. 
-So our future test should include more test persons.
-
-% subsubsection what_could_have_been_done_better_ (end)
-
-% subsubsection test_3 (end)
+% subsubsection audio_pre_test_part_three (end)
 
 % subsection sound_pre_test (end)
 
-
+\FloatBarrier
 \subsection{Product Blueprint} % (fold)
 \label{sub:product_blueprint}
 
-Now that the visual and audio elements have been found, it is time for us to plan how to make use of these elements.
+Now that the visual and auditory elements have been determined upon, it is time for us to plan how to make use of the acquired data.
 
 \subsubsection{Visual Elements} % (fold)
 \label{ssub:visual_elements}
 
-Now that the visual pictures have been decided, the drawings have to be drawn and we decided to use Adobe Flash to create those pictures for the test.
+The visual design is based on the table from the visual pre-test (Table~\ref{tab:visual_pre_test}). We use the information from our user pre-test, where to test subjects had to draw how they imagined a certain weather condition to be illustrated, to come up with similar illustrations for weather conditions in the prototype.
 
 % subsubsection visual_elements (end)
 
@@ -360,63 +533,62 @@ Now that the visual pictures have been decided, the drawings have to be drawn an
 \subsubsection{Audio elements} % (fold)
 \label{ssub:audio_elements}
 
-Now that the different sounds for weather categories are in place, the step is to figure out how to make these sounds fit into our value categories.  
-Most of the sounds can be placed and played under the fitting values but for Rain (Downpour) and Wind speed something has to be changed in order to let people know if it has a low, medium or high value. 
-In order to change these sounds we have decided to use Pure Data. 
-With Pure Data it is possible to change the speed of the sound and add filters so the sounds are able to fit into our value categories.  
+Now that the different sounds for weather categories were in place, the next step was to figure out how to make these sounds fit into our value categories. 
+Most of the sounds can be placed and played under the fitting values, but rain (Downpour) and wind speed had to be changed in order to let people know if it had a low, medium or high value.
+In order to change these sounds we decided to use Pure Data.
+With Pure Data it was possible to change the speed of the sound and add filters so the sounds that were able to fit into our value categories.
 
+Here is the Pure Data objects we will use for the implementation:
 
-Here is the filter we are going to use for Wind speed:
+\paragraph{Band Pass Filter} % (fold)
+\label{par:band_pass_filter}
 
-
-\subsubsection{Band Pass Filter} % (fold)
-\label{ssub:band_pass_filter}
-
-Band Pass Filter also called [bp~] in pure data, is a filter that allows some range of frequencies between the highest and lowest. 
-It has three inputs, the first one is the input from the audio. 
+Band Pass Filter also called [bp~] in pure data, is a filter that only allows some range of frequencies between the highest and lowest. 
+It has three inputs. 
+The first one is the input from the audio. 
 The second input is for the center frequency that will be allowed to pass. 
-The third input is the resonance, this determines how width the ranges of frequencies that is allowed to pass through the filter. 
-The function is that the center frequency will be unchanged, but the frequencies higher or lower will be reduced or removed from the sound.
+The third input is the resonance, which determines how wide the ranges of frequencies that are allowed to pass through the filter are. 
+The function is that the center frequency will be unchanged, but the frequencies, higher or lower, will be reduced or removed from the sound.
 
-% subsubsection band_pass_filter (end)
+% paragraph band_pass_filter (end)
 
 
-\subsubsection{Sample} % (fold)
-\label{ssub:sample}
+\paragraph{Sample} % (fold)
+\label{par:sample}
 
 A sample refers to a value or multiple values that is set to a point in time.
 
-% subsubsection sample (end)
+% paragraph sample (end)
 
 
-\subsubsection{Metro} % (fold)
-\label{ssub:metro}
+\paragraph{Metro} % (fold)
+\label{par:metro}
 
-An object that keeps calling after a specific amount of time in milliseconds.
+An object that keeps calling after a specific amount of time (in milliseconds).
 
-% subsubsection metro (end)
+% paragraph metro (end)
     
 
-\subsubsection{Phasor} % (fold)
-\label{ssub:phasor}
+\paragraph{Phasor} % (fold)
+\label{par:phasor}
 
 A phasor is a representation of a sinusoidal function. 
-This function is based on three factors, A that is the functions amplitude, is the frequency and  is the phase.  
+This function is based on three factors, A that is the functions amplitude, $\omega$ is the frequency and $\theta$ is the phase.  
 
 \begin{equation}
     A * \cos(\omega t + \theta)
 \end{equation}
 
 We use the phasor by leaving out the frequency and will only carry on the amplitude and phase. 
-This leaves us with the option to add the frequency factor that through the array.
+This leaves us with the option to add the frequency factor to the array.
 
-% subsubsection phasor (end)
+% paragraph phasor (end)
 
 
 \subsubsection{How the sound will be implemented in Pure Data} % (fold)
 \label{ssub:how_the_sound_will_be_implemented_in_pure_data}
 
-The way the sound will be implemented in pure data and will go through a six or seven step process.
+The way the sound will be implemented in pure data:
 
 \begin{enumerate}
     \item Input Sound
@@ -424,7 +596,7 @@ The way the sound will be implemented in pure data and will go through a six or 
     \item Determine Sample Speed
     \item Phasor
     \item Merge Array and Sample Speed
-    \item Fliter
+    \item Fliter (if required)
     \item Output Sound
 \end{enumerate}
 
@@ -432,10 +604,12 @@ First step is to make sure that the sound will be imported into the program.
 Second step is to send the sound into an array that will split the sound into samples. 
 The third step is to detect how fast the samples normally are going to be played in order to create the same sound. 
 The fourth step is sending the sample speed into a Phasor. 
-The fifth step is to merge the the play speed from the phasor with the array with the samples. 
+The fifth step is to merge the play speed from the phasor with the array with the samples. 
 This will create the sound based on the play speed that has been changed. 
 The sixth step is only to be implemented if a filter is required for the sound. 
 The seventh and last step is the output sound that have been going through all the new changes and will now sound differently.
+
+Now that all of sounds have been decided and the design of our product complete, we can now enter the implementation stage. 
 
 % subsubsection how_the_sound_will_be_implemented_in_pure_data (end)
 

@@ -13,7 +13,8 @@
                                       "*.fdb_latexmk",
                                       "*.blg",
                                       "*.bcf",
-                                      "*.bbl"]
+                                      "*.bbl",
+                                      "*.fls"]
 		}
 	]
 }
