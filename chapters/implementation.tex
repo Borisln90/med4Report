@@ -100,9 +100,9 @@ This is simply because some of the sound don’t last that long and the empty sp
 \subsubsection*{Step 2} % (fold)
 \label{ssub:step_2}
 
-Here the soundfiler collects the amount of samples and the speed. 
-As seen on the picture (Figure~\ref{fig:implementation4}) the sample amount is been read and stored in sampleSize which will be used later in the program. 
-The data follows the path down to the phasor.
+Here the soundfiler re-writes our floating points in the array to a binary sound file. 
+As seen on the picture (Figure~\ref{fig:implementation4}) the sample amount is been read and stored in sampleSize which will be used later in the program to tell how big the array is. 
+The samples then goes through a sampling that divides 44100 HZ with our sample size. This gives us the normal frequency. The data follows the path down to the phasor.
 
 \begin{figure}[!htbp]
     \centering
@@ -134,8 +134,7 @@ This is using the custom made slider right besides the text Playback Speed on th
 \subsubsection*{Step 4} % (fold)
 \label{ssub:step_4}
 
-All the information sent to the phasor that carries the new information over to the next step which merges with the array.
-
+All the information sent to the phasor is now being used. The phasor detects a value between 1 and -1 to adjust the play speed. If the value is being set to 0 the waves in the phasor will be equal and stop the sound.
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.3\textwidth]{images/Implementation6.png}
@@ -149,8 +148,8 @@ All the information sent to the phasor that carries the new information over to 
 \subsubsection*{Step 5} % (fold)
 \label{ssub:step_5}
 
-Here (Figure~\ref{fig:implementation7}) it loads the old array with the new changes to the sound. 
-At this point the play speed has been changed and changes to the sound has been made.
+Here (Figure~\ref{fig:implementation7}) 
+The information from the phasor is being send into a binary signal operator that is being given a argument that is sampleSize. By doing this our progam now remembers how many samples there used to be. The samples can now merge with the array and tell what sample to move along further in the program.
 
 \begin{figure}[!htbp]
     \centering
@@ -165,7 +164,7 @@ At this point the play speed has been changed and changes to the sound has been 
 \subsubsection*{Step 6} % (fold)
 \label{ssub:step_6}
 
-This is our bp\~ filter as seen the two boxes linked to the filter are the center frequency and the resonance. 
+This is our bp filter as seen the two boxes linked to the filter are the center frequency and the resonance. 
 In this case the center frequency is 600 and the resonance is 10.
 
 \begin{figure}[!htbp]
@@ -181,7 +180,7 @@ In this case the center frequency is 600 and the resonance is 10.
 \subsubsection*{Step 7} % (fold)
 \label{ssub:step_7}
 
-After the filter all the information is sent to dac\~ which is the audio output.
+After the filter all the information is sent to dac which is the audio output.
 
 \begin{figure}[!htbp]
     \centering
@@ -198,7 +197,7 @@ After the filter all the information is sent to dac\~ which is the audio output.
 
 Additional feature:
 
-A length tracker was implemented in order to know when the sound clip was done playing. 
+A length tracker was implemented in order to know when the sound clip was done playing. This is done by tracking the samples going through the program.
 This doesn’t change the sound output in any way but it’s useful to know during testing.
 
 \begin{figure}[!htbp]
